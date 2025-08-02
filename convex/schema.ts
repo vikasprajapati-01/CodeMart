@@ -23,10 +23,10 @@ export default defineSchema({
 
     snippets: defineTable({
         userId: v.string(),
+        userName: v.string(), 
         title: v.string(),
         language: v.string(),
         code: v.string(),
-        userName: v.string(),   // store user's name for the particular snippet
     }).index("by_user_id", ["userId"]),
 
     snippetComments: defineTable({
