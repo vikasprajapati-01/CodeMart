@@ -1,0 +1,22 @@
+.home-container {
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  max-width: 1800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
+}
+
+.panels-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .panels-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

@@ -11,7 +11,7 @@ function Footer() {
             
           <div className="footer-branding">
             <Blocks className="icon" />
-            <span>Built for developers, by developers</span>
+            <span>Made by programmers, for problem-solvers</span>
           </div>
 
           <div className="footer-links">
