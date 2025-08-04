@@ -1,0 +1,241 @@
+.language-selector {
+  position: relative;
+}
+
+.language-selector-button {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  background-color: rgba(23, 37, 42, 0.8);
+  border-radius: 8px;
+  transition: all 200ms;
+  border: 1px solid rgba(43, 122, 120, 0.5);
+}
+
+.language-selector-button:hover:not(.disabled) {
+  border-color: rgba(58, 175, 169, 0.7);
+}
+
+.language-selector-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.button-decoration {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(58, 175, 169, 0.1), rgba(43, 122, 120, 0.05));
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.language-selector-button:hover:not(.disabled) .button-decoration {
+  opacity: 1;
+}
+
+.language-icon-container {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  background-color: rgba(23, 37, 42, 0.5);
+  padding: 2px;
+  transition: transform 200ms;
+}
+
+.language-selector-button:hover:not(.disabled) .language-icon-container {
+  transform: scale(1.1);
+}
+
+.language-icon {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  position: relative;
+  z-index: 10;
+}
+
+.language-label {
+  color: #def2f1;
+  min-width: 80px;
+  text-align: left;
+  transition: color 200ms;
+}
+
+.language-selector-button:hover:not(.disabled) .language-label {
+  color: #feffff;
+}
+
+.chevron-icon {
+  width: 16px;
+  height: 16px;
+  color: #3aafa9;
+  transition: all 300ms;
+}
+
+.language-selector-button:hover:not(.disabled) .chevron-icon {
+  color: #def2f1;
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  width: 256px;
+  background-color: rgba(23, 37, 42, 0.95);
+  backdrop-filter: blur(12px);
+  border-radius: 12px;
+  border: 1px solid #2b7a78;
+  box-shadow: 0 25px 50px -12px rgba(23, 37, 42, 0.5);
+  padding-top: 8px;
+  padding-bottom: 8px;
+  z-index: 50;
+}
+
+.dropdown-header {
+  padding: 0 12px 8px 12px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(43, 122, 120, 0.5);
+}
+
+.dropdown-header-text {
+  font-size: 12px;
+  font-weight: 500;
+  color: #3aafa9;
+}
+
+.language-list {
+  max-height: 280px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.language-option-container {
+  position: relative;
+  padding: 0 8px;
+}
+
+.language-option-button {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  transition: all 200ms;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+.language-option-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.language-option-button.selected {
+  background-color: rgba(58, 175, 169, 0.1);
+  color: #3aafa9;
+}
+
+.language-option-button:not(.selected):not(:disabled) {
+  color: #def2f1;
+}
+
+.language-option-button:not(:disabled):hover {
+  background-color: rgba(43, 122, 120, 0.2);
+}
+
+.option-decoration {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(58, 175, 169, 0.05), rgba(43, 122, 120, 0.05));
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.language-option-button:not(:disabled):hover .option-decoration {
+  opacity: 1;
+}
+
+.option-icon-container {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  padding: 6px;
+  transition: transform 200ms;
+}
+
+.language-option-button:not(:disabled):hover .option-icon-container {
+  transform: scale(1.1);
+}
+
+.option-icon-container.selected {
+  background-color: rgba(58, 175, 169, 0.1);
+}
+
+.option-icon-container:not(.selected) {
+  background-color: rgba(23, 37, 42, 0.5);
+}
+
+.option-icon-decoration {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to bottom right, rgba(58, 175, 169, 0.1), rgba(43, 122, 120, 0.1));
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.language-option-button:not(:disabled):hover .option-icon-decoration {
+  opacity: 1;
+}
+
+.option-label {
+  flex: 1;
+  text-align: left;
+  transition: color 200ms;
+}
+
+.language-option-button:not(:disabled):hover .option-label {
+  color: #feffff;
+}
+
+.selected-border {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(58, 175, 169, 0.3);
+  border-radius: 8px;
+}
+
+.lock-icon {
+  width: 16px;
+  height: 16px;
+  color: rgba(58, 175, 169, 0.5);
+}
+
+.sparkle-icon {
+  width: 16px;
+  height: 16px;
+  color: #3aafa9;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
