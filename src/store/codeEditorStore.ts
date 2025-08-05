@@ -10,14 +10,14 @@ const getInitialState = () => {
     // Return default values if we're on the server
   if (typeof window === "undefined") {
     return {
-      language: "javascript",
+      language: "python",
       fontSize: 16,
       theme: "vs-dark",
     };
   }
 
   // if we're on the client, return values from local storage if exists
-  const savedLanguage = localStorage.getItem("editor-language") || "javascript";
+  const savedLanguage = localStorage.getItem("editor-language") || "python";
   const savedTheme = localStorage.getItem("editor-theme") || "vs-dark";
   const savedFontSize = localStorage.getItem("editor-font-size") || 16;
 

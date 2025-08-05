@@ -3,7 +3,7 @@
 import './LanguageSelector.css';
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDownIcon, Lock, Sparkles } from "lucide-react";
+import { ChevronDownIcon, Lock, TicketCheck } from "lucide-react";
 import Image from "next/image";
 
 import { useCodeEditorStore } from "@/store/codeEditorStore";
@@ -30,7 +30,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
     }, []);
 
     const handleLanguageSelect = (langId: string) => {
-        if (!hasAccess && langId !== "javascript") return;
+        if (!hasAccess && (langId !== "javascript" && langId !== "python" && langId !== "java" && langId !== "cpp")) return;
 
         setLanguage(langId);
         setIsOpen(false);
@@ -44,7 +44,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setIsOpen(!isOpen)}
-                className={`language-selector-button ${!hasAccess && language !== "javascript" ? "disabled" : ""}`}
+                className={`language-selector-button ${!hasAccess && language !== "javascript" && language !== "python" && language !== "java" && language !== "cpp" ? "disabled" : ""}`}
             >
                 <div className="button-decoration" aria-hidden="true" />
 
@@ -59,7 +59,7 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
                 </div>
 
                 <span className="language-label">
-                {currentLanguageObj.label}
+                    {currentLanguageObj.label}
                 </span>
 
                 <ChevronDownIcon className={`chevron-icon ${isOpen ? "rotated" : ""}`} />
@@ -75,66 +75,66 @@ function LanguageSelector({ hasAccess }: { hasAccess: boolean }) {
                     className="dropdown-menu"
                 >
                     <div className="dropdown-header">
-                    <p className="dropdown-header-text">Select Language</p>
+                        <p className="dropdown-header-text">Select Language</p>
                     </div>
 
                     <div className="language-list">
-                    {Object.values(LANGUAGE_CONFIG).map((lang, index) => {
-                        const isLocked = !hasAccess && lang.id !== "javascript";
-                        const isSelected = language === lang.id;
+                        {Object.values(LANGUAGE_CONFIG).map((lang, index) => {
+                            const isLocked = !hasAccess && (lang.id !== "javascript" && lang.id !== "python" && lang.id !== "java" && lang.id !== "cpp");
+                            const isSelected = language === lang.id;
 
-                        return (
-                        <motion.div
-                            key={lang.id}
-                            initial={{ opacity: 0 }}
-                            animate={{ opacity: 1 }}
-                            transition={{ delay: index * 0.1 }}
-                            className="language-option-container"
-                        >
-                            <button
-                            className={`language-option-button ${isSelected ? "selected" : ""}`}
-                            onClick={() => handleLanguageSelect(lang.id)}
-                            disabled={isLocked}
+                            return (
+                            <motion.div
+                                key={lang.id}
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ delay: index * 0.1 }}
+                                className="language-option-container"
                             >
-                            <div className="option-decoration" />
+                                <button
+                                className={`language-option-button ${isSelected ? "selected" : ""}`}
+                                onClick={() => handleLanguageSelect(lang.id)}
+                                disabled={isLocked}
+                                >
+                                    <div className="option-decoration" />
 
-                            <div className={`option-icon-container ${isSelected ? "selected" : ""}`}>
-                                <div className="option-icon-decoration" />
-                                <Image
-                                width={24}
-                                height={24}
-                                src={lang.logoPath}
-                                alt={`${lang.label} logo`}
-                                className="language-icon"
-                                />
-                            </div>
+                                    <div className={`option-icon-container ${isSelected ? "selected" : ""}`}>
+                                        <div className="option-icon-decoration" />
+                                        <Image
+                                        width={24}
+                                        height={24}
+                                        src={lang.logoPath}
+                                        alt={`${lang.label} logo`}
+                                        className="language-icon"
+                                        />
+                                    </div>
 
-                            <span className="option-label">
-                                {lang.label}
-                            </span>
+                                    <span className="option-label">
+                                        {lang.label}
+                                    </span>
 
-                            {isSelected && (
-                                <motion.div
-                                className="selected-border"
-                                transition={{
-                                    type: "spring",
-                                    bounce: 0.2,
-                                    duration: 0.6,
-                                }}
-                                />
-                            )}
+                                    {isSelected && (
+                                        <motion.div
+                                        className="selected-border"
+                                        transition={{
+                                            type: "spring",
+                                            bounce: 0.2,
+                                            duration: 0.6,
+                                        }}
+                                        />
+                                    )}
 
-                            {isLocked ? (
-                                <Lock className="lock-icon" />
-                            ) : (
-                                isSelected && (
-                                <Sparkles className="sparkle-icon" />
-                                )
-                            )}
-                            </button>
-                        </motion.div>
-                        );
-                    })}
+                                    {isLocked ? (
+                                        <Lock className="lock-icon" />
+                                    ) : (
+                                        isSelected && (
+                                        <TicketCheck className="sparkle-icon" />
+                                        )
+                                    )}
+                                </button>
+                            </motion.div>
+                            );
+                        })}
                     </div>
                 </motion.div>
                 )}

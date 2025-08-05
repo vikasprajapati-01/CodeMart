@@ -1,7 +1,7 @@
 function CodePanel() {
   return (
     <header className="app-header">
-      <h1>Code</h1>
+      <h1>Coming soon</h1>
     </header>
   );
 }
