@@ -21,7 +21,7 @@ export const LANGUAGE_CONFIG: LanguageConfig = {
     pistonRuntime: { language: "python", version: "3.10.0" },
     monacoLanguage: "python",
     defaultCode: `# Python
-      print(f"Welcome to CodeMart")`,
+print("Welcome to CodeMart")`,
   },
   java: {
     id: "java",
@@ -30,10 +30,10 @@ export const LANGUAGE_CONFIG: LanguageConfig = {
     pistonRuntime: { language: "java", version: "15.0.2" },
     monacoLanguage: "java",
     defaultCode: ` // Java
-      public class Main {
-        public static void main(String[] args) {
-          System.out.println("Welcome to CodeMart");
-      }`,
+public class Main {
+  public static void main(String[] args) {
+    System.out.println("Welcome to CodeMart");
+}`,
   },
   javascript: {
     id: "javascript",
@@ -42,7 +42,7 @@ export const LANGUAGE_CONFIG: LanguageConfig = {
     pistonRuntime: { language: "javascript", version: "18.15.0" },
     monacoLanguage: "javascript",
     defaultCode: `// JavaScript
-      console.log("Welcome to CodeMart");`,
+console.log("Welcome to CodeMart");`,
   },
   cpp: {
     id: "cpp",
@@ -51,12 +51,12 @@ export const LANGUAGE_CONFIG: LanguageConfig = {
     pistonRuntime: { language: "cpp", version: "10.2.0" },
     monacoLanguage: "cpp",
     defaultCode: ` // C++
-    #include <iostream>
+#include <iostream>
 
-    int main() {
-        std::cout << "Welcome to CodeMart" << std::endl;
-        return 0;
-    }`,
+int main() {
+    std::cout << "Welcome to CodeMart" << std::endl;
+    return 0;
+}`,
   },
   typescript: {
     id: "typescript",
@@ -65,7 +65,7 @@ export const LANGUAGE_CONFIG: LanguageConfig = {
     pistonRuntime: { language: "typescript", version: "5.0.3" },
     monacoLanguage: "typescript",
     defaultCode: `// TypeScript
-      console.log("Welcome to CodeMart");`,
+console.log("Welcome to CodeMart");`,
   },
   go: {
     id: "go",
@@ -74,13 +74,13 @@ export const LANGUAGE_CONFIG: LanguageConfig = {
     pistonRuntime: { language: "go", version: "1.16.2" },
     monacoLanguage: "go",
     defaultCode: `// Go
-    package main
+package main
 
-    import "fmt"
+import "fmt"
 
-    func main() {
-      fmt.Println("Welcome to CodeMart")
-    }`,
+func main() {
+  fmt.Println("Welcome to CodeMart")
+}`,
   },
   rust: {
     id: "rust",
@@ -100,13 +100,13 @@ export const LANGUAGE_CONFIG: LanguageConfig = {
     pistonRuntime: { language: "csharp", version: "6.12.0" },
     monacoLanguage: "csharp",
     defaultCode: ` // C#
-      using System;
+using System;
 
-      class Program {
-          static void Main() {
-              Console.WriteLine("Welcome to CodeMart");
-          }
-      }`,
+class Program {
+    static void Main() {
+        Console.WriteLine("Welcome to CodeMart");
+    }
+}`,
   },
   ruby: {
     id: "ruby",
@@ -115,7 +115,7 @@ export const LANGUAGE_CONFIG: LanguageConfig = {
     pistonRuntime: { language: "ruby", version: "3.0.1" },
     monacoLanguage: "ruby",
     defaultCode: `// Ruby
-      puts "Welcome to CodeMart"`,
+puts "Welcome to CodeMart"`,
   },
   swift: {
     id: "swift",
@@ -124,7 +124,7 @@ export const LANGUAGE_CONFIG: LanguageConfig = {
     pistonRuntime: { language: "swift", version: "5.3.3" },
     monacoLanguage: "swift",
     defaultCode: `// Swift
-      print("Welcome to CodeMart")`,
+print("Welcome to CodeMart")`,
   },
 };
 
