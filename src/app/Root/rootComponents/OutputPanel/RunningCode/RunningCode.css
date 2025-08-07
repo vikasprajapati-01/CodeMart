@@ -1,0 +1,54 @@
+.running-skeleton-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.skeleton-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skeleton-group-spaced {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: 16px;
+}
+
+.skeleton-line {
+  height: 16px;
+  background-color: rgba(43, 122, 120, 0.5);
+  border-radius: 4px;
+}
+
+.skeleton-line-75 {
+  width: 75%;
+}
+
+.skeleton-line-50 {
+  width: 50%;
+}
+
+.skeleton-line-83 {
+  width: 83.333333%;
+}
+
+.skeleton-line-67 {
+  width: 66.666667%;
+}
+
+.skeleton-line-80 {
+  width: 80%;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
