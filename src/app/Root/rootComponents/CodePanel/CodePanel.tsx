@@ -44,7 +44,7 @@ function EditorPanel() {
   };
 
   const handleFontSizeChange = (newSize: number) => {
-    const size = Math.min(Math.max(newSize, 12), 24);
+    const size = Math.min(Math.max(newSize, 12), 32);
     setFontSize(size);
     localStorage.setItem("editor-font-size", size.toString());
   };
@@ -82,7 +82,7 @@ function EditorPanel() {
                 <input
                   type="range"
                   min="12"
-                  max="24"
+                  max="32"
                   value={fontSize}
                   onChange={(e) => handleFontSizeChange(parseInt(e.target.value))}
                   className="font-size-slider"
