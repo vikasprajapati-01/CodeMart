@@ -12,6 +12,7 @@ function OutputPanel() {
   const [isCopied, setIsCopied] = useState(false);
 
   const hasContent = error || output;
+  // const hasContent = true;
 
   const handleCopy = async () => {
     if (!hasContent) return;
@@ -36,7 +37,7 @@ function OutputPanel() {
             {isCopied ? (
               <>
                 <CheckCircle className="copy-icon" />
-                Copied!
+                Copied
               </>
             ) : (
               <>
@@ -73,7 +74,7 @@ function OutputPanel() {
               <div className="empty-state-icon-container">
                 <Clock className="empty-state-icon" />
               </div>
-              <p className="empty-state-text">Run your code to see the output here...</p>
+              <p className="empty-state-text">Click on the run button to execute your code</p>
             </div>
           )}
         </div>

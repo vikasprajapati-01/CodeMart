@@ -9,7 +9,7 @@ import { SignedIn } from "@clerk/nextjs";
 
 import { api } from "../../../../../convex/_generated/api";
 import HeaderProfileButton from './headComponents/HeaderProfile/HeaderProfileButton';
-import RunButton from './headComponents/RunButton/RunButton';
+import RunButton from '../RunButton/RunButton';
 import LanguageSelector from './headComponents/LanguageSelector/LanguageSelector';
 import ThemeSelector from './headComponents/ThemeSelector/ThemeSelector';
 

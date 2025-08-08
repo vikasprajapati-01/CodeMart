@@ -1,0 +1,108 @@
+.run-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.run-button:disabled {
+  cursor: not-allowed;
+}
+
+.run-button-background {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #3aafa9, #2b7a78);
+  border-radius: 12px;
+  opacity: 1;
+  transition: opacity 200ms;
+}
+
+.run-button:hover:not(:disabled) .run-button-background {
+  opacity: 0.9;
+}
+
+.run-button-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.loading-icon-container {
+  position: relative;
+}
+
+.loading-icon {
+  width: 16px;
+  height: 16px;
+  animation: spin 1s linear infinite;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.loading-blur {
+  position: absolute;
+  inset: 0;
+  filter: blur(1px);
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.loading-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.play-icon-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.play-icon {
+  width: 16px;
+  height: 16px;
+  color: rgba(255, 255, 255, 0.9);
+  transition: transform 200ms, color 200ms;
+}
+
+.run-button:hover:not(:disabled) .play-icon {
+  transform: scale(1.1);
+  color: #feffff;
+}
+
+.run-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 200ms;
+}
+
+.run-button:hover:not(:disabled) .run-text {
+  color: #feffff;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
