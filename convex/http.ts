@@ -5,9 +5,9 @@ import { WebhookEvent } from "@clerk/nextjs/server";
 import { httpAction } from "./_generated/server"
 import { api } from "./_generated/api"
 
-const router = new HttpRouter();
+const http = new HttpRouter();
 
-router.route({
+http.route({
     path: "/clerk-webhook",
     method: "POST",
     handler: httpAction(async ( ctx, request ) => {
@@ -67,4 +67,4 @@ router.route({
     })
 })
 
-export default router;
+export default http;
