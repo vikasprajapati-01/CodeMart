@@ -1,4 +1,3 @@
-import { handler } from 'next/dist/build/templates/app-page';
 import { mutation, query } from './_generated/server'
 import { v } from 'convex/values'
 
