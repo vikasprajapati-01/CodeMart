@@ -1,0 +1,201 @@
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  border-bottom: 1px solid rgba(43, 122, 120, 0.4);
+  background-color: rgba(23, 37, 42, 0.8); /* #17252A */
+  backdrop-filter: blur(16px) saturate(150%);
+}
+
+.nav-surface-gradient {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(58, 175, 169, 0.06), rgba(43, 122, 120, 0.06));
+  pointer-events: none;
+}
+
+.nav-container {
+  position: relative;
+  /* max-width: 90rem; */
+  margin: 0 auto;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.nav-bar {
+  position: relative;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* Logo */
+.logo-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-hover-glow {
+  position: absolute;
+  inset: -8px;
+  background-image: linear-gradient(to right, rgba(58, 175, 169, 0.18), rgba(43, 122, 120, 0.18));
+  border-radius: 12px;
+  opacity: 0;
+  filter: blur(28px);
+  transition: opacity 500ms;
+}
+
+.logo-link:hover .logo-hover-glow {
+  opacity: 1;
+}
+
+.logo-box {
+  position: relative;
+  padding: 8px;
+  border-radius: 12px;
+  background-image: linear-gradient(to bottom right, #111a1d, #0a1316);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: border-color 300ms;
+}
+
+.logo-link:hover .logo-box {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.logo-icon {
+  width: 24px;
+  height: 24px;
+  color: #3aafa9;
+  transform: rotate(-6deg);
+  transition: transform 500ms;
+}
+
+.logo-link:hover .logo-icon {
+  transform: rotate(0deg);
+}
+
+.logo-text-wrap {
+  position: relative;
+  display: block;
+}
+
+.logo-title {
+  display: block;
+  font-size: 1.125rem; /* text-lg */
+  font-weight: 600;
+  background-image: linear-gradient(to right, #3aafa9, #7fdad6, #def2f1);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.logo-subtitle {
+  display: block;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 500;
+  color: rgba(58, 175, 169, 0.7);
+}
+
+.nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 10px;
+  color: #def2f1;
+  background-color: rgba(23, 37, 42, 0.6);
+  border: 1px solid rgba(43, 122, 120, 0.6);
+  transition: background-color 300ms, border-color 300ms, color 300ms;
+  overflow: hidden;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  background-color: rgba(58, 175, 169, 0.12);
+  border-color: rgba(58, 175, 169, 0.5);
+  color: #feffff;
+}
+
+.nav-link-bg {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(to right, rgba(58, 175, 169, 0.12), rgba(43, 122, 120, 0.12));
+  opacity: 0;
+  transition: opacity 300ms;
+  pointer-events: none;
+}
+
+.nav-link:hover .nav-link-bg {
+  opacity: 1;
+}
+
+.nav-link-icon {
+  width: 16px;
+  height: 16px;
+  color: currentColor;
+  transition: transform 300ms;
+}
+
+.nav-link:hover .nav-link-icon {
+  transform: rotate(3deg);
+}
+
+.nav-link-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  position: relative;
+}
+
+.right-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pro-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 10px;
+  border: 1px solid rgba(58, 175, 169, 0.3);
+  background-image: linear-gradient(to right, rgba(58, 175, 169, 0.12), rgba(43, 122, 120, 0.12));
+  transition: border-color 300ms, background-color 300ms, color 300ms;
+  text-decoration: none;
+}
+
+.pro-btn:hover {
+  border-color: rgba(58, 175, 169, 0.5);
+  background-image: linear-gradient(to right, rgba(58, 175, 169, 0.2), rgba(43, 122, 120, 0.2));
+}
+
+.pro-icon {
+  width: 16px;
+  height: 16px;
+  color: #3aafa9;
+  transition: color 200ms;
+}
+
+.pro-text {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(58, 175, 169, 0.9);
+  transition: color 200ms;
+}
+
+.pro-btn:hover .pro-icon,
+.pro-btn:hover .pro-text {
+  color: #feffff;
+}

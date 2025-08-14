@@ -1,0 +1,57 @@
+.star-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(43, 122, 120, 0.5); /* #2b7a78 */
+  background-color: rgba(23, 37, 42, 0.6); /* #17252A */
+  color: #def2f1;
+  transition: background-color 200ms, border-color 200ms, color 200ms, opacity 200ms;
+  cursor: pointer;
+}
+
+.star-btn:hover {
+  background-color: rgba(43, 122, 120, 0.2);
+  border-color: rgba(58, 175, 169, 0.5); /* #3aafa9 */
+  color: #feffff;
+}
+
+.star-btn.active {
+  background-color: rgba(58, 175, 169, 0.12);
+  border-color: rgba(58, 175, 169, 0.5);
+  color: #3aafa9;
+}
+
+.star-btn[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.star-icon {
+  width: 16px;
+  height: 16px;
+  stroke: currentColor;
+  fill: none;
+  transition: fill 200ms, color 200ms;
+}
+
+.star-btn:hover .star-icon {
+  fill: rgba(222, 242, 241, 0.6); /* #def2f1 */
+}
+
+.star-btn.active .star-icon {
+  fill: #3aafa9;
+  stroke: #3aafa9;
+}
+
+.star-count {
+  font-size: 12px;
+  font-weight: 500;
+  color: #def2f1;
+  transition: color 200ms, opacity 200ms;
+}
+
+.star-count.active {
+  color: #3aafa9;
+}
