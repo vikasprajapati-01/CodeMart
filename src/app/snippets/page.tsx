@@ -7,7 +7,7 @@ import SnippetsPageSkeleton from "./snippetComponents/SnippetSkeleton/SnippetSke
 import Navbar from "@/components/Navbar/Navbar";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { BookOpen, Code, Grid, Layers, Search, Tag, X } from "lucide-react";
+import { Code, Grid, Layers, Search, Tag, X } from "lucide-react";
 import SnippetCard from "./snippetComponents/SnippetCard/SnippetCard";
 import "./Snippets.css";
 
