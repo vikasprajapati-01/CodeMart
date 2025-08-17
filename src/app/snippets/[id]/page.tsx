@@ -2,14 +2,17 @@
 
 import { useQuery } from "convex/react";
 import { useParams } from "next/navigation";
-import { api } from "../../../../convex/_generated/api";
+import { Editor } from "@monaco-editor/react";
+import { Clock, Code, MessageSquare, User } from "lucide-react";
+
+import { defineMonacoThemes, LANGUAGE_CONFIG } from "@/app/Root/constants";
 import { Id } from "../../../../convex/_generated/dataModel";
+import { api } from "../../../../convex/_generated/api";
 import SnippetLoading from "./SnippetComp/SnippetLoading/SnippetLoading";
 import Navbar from "@/components/Navbar/Navbar";
-import { Clock, Code, MessageSquare, User } from "lucide-react";
-import { Editor } from "@monaco-editor/react";
-import { defineMonacoThemes, LANGUAGE_CONFIG } from "@/app/Root/constants";
 import CopyButton from "./SnippetComp/CopyBtn/CopyBtn";
+import Comments from "./SnippetComp/Comments/Comments";
+
 import "./SnippetDetailPage.css";
 
 function SnippetDetailPage() {
@@ -88,6 +91,7 @@ function SnippetDetailPage() {
               />
             </div>
           </div>
+          <Comments snippetId={snippet._id} />
 
         </div>
       </main>
