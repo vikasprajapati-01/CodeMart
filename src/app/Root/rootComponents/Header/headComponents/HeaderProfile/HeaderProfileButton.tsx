@@ -1,5 +1,5 @@
 "use client";
-import { SignedOut, SignIn, UserButton } from "@clerk/nextjs";
+import { SignedOut, UserButton, SignInButton } from "@clerk/nextjs";
 import { User } from "lucide-react";
 
 function HeaderProfileButton() {
@@ -16,7 +16,11 @@ function HeaderProfileButton() {
       </UserButton>
 
       <SignedOut>
-        <SignIn />
+        <SignInButton mode="modal">
+          <button className="signin-button">
+            Sign In
+          </button>
+        </SignInButton>
       </SignedOut>
     </>
   );

@@ -1,0 +1,64 @@
+.code-block {
+  position: relative;
+  border-radius: 8px;
+  background-color: #17252A;
+  border: 1px solid rgba(43, 122, 120, 0.3);
+  overflow: hidden;
+}
+
+/* SyntaxHighlighter overriding */
+.code-block pre {
+  background-color: transparent !important;
+  margin: 0 !important;
+  padding: 1rem !important;
+  border-radius: 0 !important;
+}
+
+.code-block code {
+  background-color: transparent !important;
+  color: #def2f1 !important;
+  font-family: "Fira Code", "Cascadia Code", Consolas, monospace !important;
+  font-size: 0.875rem !important;
+  line-height: 1.5 !important;
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+}
+
+.code-block-fade {
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 56px;
+  background: linear-gradient(to bottom, rgba(23, 37, 42, 0), rgba(23, 37, 42, 0.85) 40%, rgba(23, 37, 42, 0.98));
+  pointer-events: none;
+}
+
+.code-block-toggle {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  font-size: 0.75rem;
+  border-radius: 6px;
+  color: #3aafa9;
+  background-color: rgba(58, 175, 169, 0.12);
+  border: 1px solid rgba(43, 122, 120, 0.3);
+  transition: background-color 200ms, border-color 200ms, color 200ms, opacity 200ms;
+}
+
+.code-block-toggle:hover {
+  background-color: rgba(58, 175, 169, 0.2);
+  border-color: rgba(58, 175, 169, 0.5);
+}
+
+.code-block-toggle:focus-visible {
+  outline: 2px solid #3aafa9;
+  outline-offset: 2px;
+}
+
+.code-block-toggle .icon {
+  width: 12px;
+  height: 12px;
+}

@@ -1,0 +1,245 @@
+.ph-card {
+  position: relative;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  border-radius: 16px;
+  border: 1px solid rgba(43, 122, 120, 0.3);
+  background: linear-gradient(135deg, rgba(23, 37, 42, 0.95), rgba(11, 19, 21, 0.9));
+  overflow: hidden;
+}
+
+/* Subtle grid overlay */
+.ph-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(222, 242, 241, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(222, 242, 241, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.4;
+}
+
+.ph-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.ph-avatar-wrap {
+  position: relative;
+  width: 96px;
+  height: 96px;
+  border-radius: 9999px;
+  isolation: isolate;
+}
+
+.ph-avatar-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #3aafa9, #2b7a78);
+  filter: blur(8px);
+  opacity: 0.5;
+  transition: opacity 200ms, transform 200ms;
+  z-index: 0;
+}
+
+.ph-avatar-wrap:hover .ph-avatar-glow {
+  opacity: 0.4;
+  transform: scale(1);
+}
+
+.ph-avatar {
+  position: relative;
+  z-index: 1;
+  width: 96px;
+  height: 96px;
+  border-radius: 9999px;
+  object-fit: cover;
+  border: 4px solid rgba(43, 122, 120, 0.4);
+  transition: transform 200ms;
+}
+
+.ph-avatar-wrap:hover .ph-avatar {
+  transform: scale(1.03);
+}
+
+.ph-pro-badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #3aafa9, #2b7a78);
+  color: #feffff;
+  z-index: 2;
+  box-shadow: 0 8px 20px rgba(58, 175, 169, 0.4);
+  animation: ph-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes ph-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.ph-user-name-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.ph-user-name {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: #feffff;
+}
+
+.ph-pro-pill {
+  padding: 6px 12px;
+  border-radius: 9999px;
+  background-color: rgba(58, 175, 169, 0.12);
+  color: #3aafa9;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.ph-user-email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #def2f1;
+  opacity: 0.75;
+}
+
+/* Stats grid */
+.ph-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .ph-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Stat card */
+.stat-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(11, 19, 21, 0.6), rgba(11, 19, 21, 0.3));
+  isolation: isolate;
+}
+
+.stat-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, var(--accent-from, #3aafa9), var(--accent-to, #2b7a78));
+  opacity: 0;
+  transition: opacity 400ms;
+  z-index: 0;
+}
+
+.stat-card:hover .stat-glow {
+  opacity: 0.08;
+}
+
+.stat-content {
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem;
+}
+
+.stat-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.stat-desc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+  color: #def2f1;
+  opacity: 0.7;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #feffff;
+  letter-spacing: 0.2px;
+}
+
+.stat-label {
+  margin-top: 4px;
+  color: #def2f1;
+  opacity: 0.7;
+  font-size: 0.875rem;
+}
+
+.stat-icon-wrap {
+  padding: 12px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent-from, #3aafa9), var(--accent-to, #2b7a78));
+  color: #feffff;
+}
+
+.stat-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.stat-metric {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(43, 122, 120, 0.3);
+}
+
+.stat-metric .metric-icon {
+  width: 16px;
+  height: 16px;
+  color: #def2f1;
+  opacity: 0.7;
+}
+
+.stat-metric .metric-label {
+  font-size: 0.875rem;
+  color: #def2f1;
+  opacity: 0.7;
+}
+
+.stat-metric .metric-value {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #feffff;
+}
+
+/* Shimmer band on hover */
+.stat-sheen {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  transform: translateX(-100%);
+  transition: transform 1000ms;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.stat-card:hover .stat-sheen {
+  transform: translateX(100%);
+}
