@@ -31,8 +31,7 @@ function SnippetCard({ snippet }: Props) {
       await deleteSnippet({ snippetId: snippet._id });
       toast.success("Snippet deleted");
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.log("Error deleting snippet:", error);
+      console.error("Error deleting snippet:", error);
       toast.error("Error deleting snippet");
     } finally {
       setIsDeleting(false);

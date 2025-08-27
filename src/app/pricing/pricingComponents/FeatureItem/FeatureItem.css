@@ -1,0 +1,42 @@
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  transition: all 200ms ease-in-out;
+}
+
+.feature-item-icon-wrap {
+  margin-top: 4px;
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: rgba(58, 175, 169, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(43, 122, 120, 0.3);
+  transition: border-color 200ms ease-in-out, background-color 200ms ease-in-out;
+}
+
+.feature-item:hover .feature-item-icon-wrap {
+  border-color: rgba(58, 175, 169, 0.5);
+  background-color: rgba(58, 175, 169, 0.2);
+}
+
+.feature-item-icon {
+  width: 12px;
+  height: 12px;
+  color: #3aafa9;
+}
+
+.feature-item-text {
+  color: #def2f1;
+  opacity: 0.8;
+  line-height: 1.5;
+  transition: opacity 200ms ease-in-out;
+}
+
+.feature-item:hover .feature-item-text {
+  opacity: 1;
+}

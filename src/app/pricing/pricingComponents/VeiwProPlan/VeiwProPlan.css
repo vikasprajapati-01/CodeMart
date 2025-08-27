@@ -1,0 +1,148 @@
+.pro-plan-page {
+  background-color: #17252A;
+  min-height: 100vh;
+}
+
+.pro-plan-container {
+  position: relative;
+  padding: 1rem;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pro-plan-card-wrap {
+  position: relative;
+  max-width: 36rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Card glow effects */
+.pro-plan-top-line {
+  position: absolute;
+  inset: auto 0 -1px 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(58, 175, 169, 0.5), transparent);
+}
+
+.pro-plan-bottom-line {
+  position: absolute;
+  inset: -1px 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(43, 122, 120, 0.5), transparent);
+}
+
+.pro-plan-outer-glow {
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(90deg, rgba(58, 175, 169, 0.3), rgba(43, 122, 120, 0.3));
+  filter: blur(32px);
+  opacity: 0.15;
+}
+
+/* Main card */
+.pro-plan-card {
+  position: relative;
+  background: rgba(23, 37, 42, 0.95);
+  border: 1px solid rgba(43, 122, 120, 0.4);
+  backdrop-filter: blur(32px);
+  border-radius: 16px;
+  padding: 3rem;
+}
+
+.pro-plan-inner-glow {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(58, 175, 169, 0.08), rgba(43, 122, 120, 0.08));
+  border-radius: 16px;
+}
+
+.pro-plan-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* Star icon */
+.pro-plan-star-wrap {
+  display: inline-flex;
+  padding: 1rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(58, 175, 169, 0.15), rgba(43, 122, 120, 0.15));
+  margin-bottom: 1.5rem;
+  border: 1px solid rgba(43, 122, 120, 0.3);
+}
+
+.pro-plan-star {
+  width: 32px;
+  height: 32px;
+  color: #3aafa9;
+}
+
+/* Typography */
+.pro-plan-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  color: #feffff;
+  margin-bottom: 0.75rem;
+}
+
+.pro-plan-subtitle {
+  color: #def2f1;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+/* CTA Button */
+.pro-plan-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: linear-gradient(90deg, rgba(58, 175, 169, 0.12), rgba(43, 122, 120, 0.12));
+  color: #feffff;
+  border-radius: 12px;
+  border: 1px solid rgba(43, 122, 120, 0.4);
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+  font-weight: 500;
+}
+
+.pro-plan-cta:hover {
+  background: linear-gradient(90deg, rgba(58, 175, 169, 0.2), rgba(43, 122, 120, 0.2));
+  border-color: rgba(58, 175, 169, 0.6);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(58, 175, 169, 0.2);
+}
+
+.pro-plan-cta:focus-visible {
+  outline: 2px solid #3aafa9;
+  outline-offset: 2px;
+}
+
+.pro-plan-cta .icon-command {
+  width: 20px;
+  height: 20px;
+  color: #3aafa9;
+}
+
+.pro-plan-cta .icon-arrow {
+  width: 20px;
+  height: 20px;
+  color: #3aafa9;
+  transition: transform 200ms ease-in-out;
+}
+
+.pro-plan-cta:hover .icon-arrow {
+  transform: translateX(2px);
+}
+
+.pro-plan-cta-text {
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}

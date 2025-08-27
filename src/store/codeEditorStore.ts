@@ -1,4 +1,3 @@
-import { Monaco } from "@monaco-editor/react";
 import * as monaco from "monaco-editor";
 import { create } from "zustand";
 

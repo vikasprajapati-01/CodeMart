@@ -1,0 +1,48 @@
+.upgrade-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 1rem 2rem;
+  color: #feffff;
+  background: linear-gradient(90deg, #3aafa9, #2b7a78);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 200ms ease-in-out;
+  box-shadow: 0 8px 25px rgba(58, 175, 169, 0.25);
+  border: 1px solid rgba(43, 122, 120, 0.3);
+}
+
+.upgrade-btn:hover {
+  background: linear-gradient(90deg, #2b7a78, #17252A);
+  box-shadow: 0 12px 30px rgba(58, 175, 169, 0.35);
+  transform: translateY(-1px);
+  border-color: rgba(58, 175, 169, 0.5);
+}
+
+.upgrade-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(58, 175, 169, 0.3);
+}
+
+.upgrade-btn:focus-visible {
+  outline: 2px solid #3aafa9;
+  outline-offset: 2px;
+}
+
+.upgrade-btn .icon {
+  width: 20px;
+  height: 20px;
+  color: #feffff;
+  transition: transform 200ms ease-in-out;
+}
+
+.upgrade-btn:hover .icon {
+  transform: scale(1.1);
+}
+
+.upgrade-btn-text {
+  font-size: 1rem;
+  letter-spacing: 0.01em;
+}

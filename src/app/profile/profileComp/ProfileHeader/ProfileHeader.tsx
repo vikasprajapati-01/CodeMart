@@ -106,8 +106,8 @@ function ProfileHeader({ userStats, userData, user }: ProfileHeaderProps) {
               style={
                 {
                   // Accent colors via CSS variables
-                  ["--accent-from" as any]: stat.accent.from,
-                  ["--accent-to" as any]: stat.accent.to,
+                  ["--accent-from" as string]: stat.accent.from,
+                  ["--accent-to" as string]: stat.accent.to,
                 } as React.CSSProperties
               }
             >
