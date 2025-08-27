@@ -100,7 +100,7 @@ function EditorPanel() {
               className="share-button"
             >
               <ShareIcon className="share-icon" />
-              <span className="share-text">Share</span>
+              <span className="share-text">Save</span>
             </motion.button>
           </div>
         </div>

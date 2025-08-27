@@ -19,6 +19,19 @@ export const createSnippet = mutation({
 
     if (!user) throw new Error("User not found");
 
+    // Check if user is pro, if not, limit to 3 snippets
+    if (!user.isPro) {
+      const userSnippets = await ctx.db
+        .query("snippets")
+        .withIndex("by_user_id")
+        .filter((q) => q.eq(q.field("userId"), identity.subject))
+        .collect();
+
+      if (userSnippets.length >= 3) {
+        throw new Error("Free users can only save up to 3 code snippets. Upgrade to Pro for unlimited snippets!");
+      }
+    }
+
     const snippetId = await ctx.db.insert("snippets", {
       userId: identity.subject,
       userName: user.name,
@@ -222,5 +235,38 @@ export const getStarredSnippets = query({
     const snippets = await Promise.all(stars.map((star) => ctx.db.get(star.snippetId)));
 
     return snippets.filter((snippet) => snippet !== null);
+  },
+});
+
+export const getUserSnippetStats = query({
+  handler: async (ctx) => {
+    const identity = await ctx.auth.getUserIdentity();
+    if (!identity) return null;
+
+    const user = await ctx.db
+      .query("users")
+      .withIndex("by_user_id")
+      .filter((q) => q.eq(q.field("userId"), identity.subject))
+      .first();
+
+    if (!user) return null;
+
+    const userSnippets = await ctx.db
+      .query("snippets")
+      .withIndex("by_user_id")
+      .filter((q) => q.eq(q.field("userId"), identity.subject))
+      .collect();
+
+    const snippetCount = userSnippets.length;
+    const maxSnippets = user.isPro ? null : 3; // null means unlimited for pro users
+    const remainingSlots = user.isPro ? null : Math.max(0, 3 - snippetCount);
+
+    return {
+      isPro: user.isPro,
+      snippetCount,
+      maxSnippets,
+      remainingSlots,
+      canCreateMore: user.isPro || snippetCount < 3,
+    };
   },
 });
