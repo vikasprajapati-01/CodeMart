@@ -23,6 +23,13 @@ function Navbar() {
               </div>
             </Link>
 
+            <Link href="/" className="nav-link">
+              <div className="nav-link-bg" />
+              <span className="nav-link-text">
+                Home
+              </span>
+            </Link>
+
             <Link href="/snippets" className="nav-link">
               <div className="nav-link-bg" aria-hidden="true" />
               <Code2 className="nav-link-icon" />

@@ -40,6 +40,8 @@ async function Header() {
             </div>
           </Link>
 
+          
+
           <nav className="navigation">
             <Link href="/snippets" className="nav-link">
               <div className="nav-link-bg" />

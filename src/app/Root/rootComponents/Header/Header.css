@@ -54,7 +54,7 @@
 
 .logo-link:hover .logo-container {
   border-color: rgba(58, 175, 169, 0.4);
-  box-shadow: 0 4px 20px rgba(58, 149, 144, 0.7);
+  box-shadow: 0 4px 20px rgba(43, 183, 176, 0.4);
 }
 
 .logo-icon {
@@ -67,11 +67,6 @@
 .logo-text-container {
   display: flex;
   flex-direction: column;
-  transition: all 0.3s ease;
-}
-
-.logo-text-container:hover {
-  transform: scale(1.06);
 }
 
 .logo-title {
@@ -110,6 +105,7 @@
   text-decoration: none;
   transition: all 0.2s ease;
   overflow: hidden;
+  margin: 5px;
 }
 
 .nav-link:hover {
