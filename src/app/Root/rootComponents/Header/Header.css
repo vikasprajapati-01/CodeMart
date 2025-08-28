@@ -54,7 +54,7 @@
 
 .logo-link:hover .logo-container {
   border-color: rgba(58, 175, 169, 0.4);
-  box-shadow: 0 4px 20px rgba(58, 175, 169, 0.2);
+  box-shadow: 0 4px 20px rgba(58, 149, 144, 0.7);
 }
 
 .logo-icon {
@@ -67,6 +67,11 @@
 .logo-text-container {
   display: flex;
   flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.logo-text-container:hover {
+  transform: scale(1.06);
 }
 
 .logo-title {
@@ -131,10 +136,6 @@
   position: relative;
   z-index: 10;
   transition: transform 0.2s ease;
-}
-
-.nav-link:hover .nav-icon {
-  transform: rotate(3deg);
 }
 
 .nav-text {

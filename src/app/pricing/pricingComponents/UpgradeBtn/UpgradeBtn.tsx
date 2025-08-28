@@ -4,7 +4,7 @@ import "./UpgradeBtn.css";
 
 export default function UpgradeBtn() {
   const CHECKOUT_URL =
-    "https://ytprogrammingstore.lemonsqueezy.com/buy/d459dddb-a233-4060-9e72-90a1a7740552";
+    "https://vikasprajapati.lemonsqueezy.com/buy/909ab34b-287c-4a1f-a093-76a28d98a5dd";
 
   return (
     <Link

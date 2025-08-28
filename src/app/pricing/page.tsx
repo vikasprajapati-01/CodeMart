@@ -72,12 +72,12 @@ async function PricingPage() {
                     <Star className="pricing-star" />
                   </div>
                   <h2 className="pricing-title">Unlock CodeMart Pro
-                    <br />
-                    <span style={{ color: "#3aafa9" }}>Limited time offer</span>
+                    {/* <br />
+                    <span style={{ color: "#3aafa9" }}>Limited time offer</span> */}
                   </h2>
                   <div className="pricing-amount">
-                    <span className="pricing-currency">$</span>
-                    <span className="pricing-price">10</span>
+                    <span className="pricing-currency">₹</span>
+                    <span className="pricing-price">449.99</span>
                     <span className="pricing-period">/year</span>
                   </div>
                   <p className="pricing-subtitle">Unlock the full potential of CodeMart</p>
